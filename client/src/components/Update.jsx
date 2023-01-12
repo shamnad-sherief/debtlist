@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import {  } from 'react-router-dom';
 import './styles.css'
 
 
@@ -13,6 +14,7 @@ export const Update = () => {
     });
 
   const navigate = useNavigate() 
+
 
   const listId = window.location.pathname.split( '/' )[2]
 

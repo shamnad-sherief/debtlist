@@ -39,6 +39,7 @@ const DebtList = () => {
             <Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>Amount</Table.HeaderCell>
+              <Table.HeaderCell colspan="2">Actions</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
@@ -46,16 +47,14 @@ const DebtList = () => {
               <Table.Row key={list.id}>
                 <Table.Cell>{list.name}</Table.Cell>
                 <Table.Cell>{list.amount}</Table.Cell>
-                <Table.Cell><button id='edit-button' ><Link to={`/update/${list.id}`} id='edit' className="button">Edit</Link></button></Table.Cell>
+                <Table.Cell><button id='edit-button' ><Link to={{ pathname: `/update/${list.id}`,  state: { name: list.name, amount: list.amount }, }} id='edit' className="button">Edit</Link></button></Table.Cell>
                 <Table.Cell><button id='delete-button' className="button" onClick={()=>handleDelete(list.id)}>Delete</button></Table.Cell>
 
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
-        <button  className="">
             <Link to="/add" id="submit"> Add new List</Link>
-         </button>
     </div>
   )
 }

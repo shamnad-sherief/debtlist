@@ -46,7 +46,7 @@ const DebtList = () => {
               <Table.Row key={list.id}>
                 <Table.Cell>{list.name}</Table.Cell>
                 <Table.Cell>{list.amount}</Table.Cell>
-                <Table.Cell><button id='edit-button' ><Link to="/edit" id='edit' className="button">Edit</Link></button></Table.Cell>
+                <Table.Cell><button id='edit-button' ><Link to={`/update/${list.id}`} id='edit' className="button">Edit</Link></button></Table.Cell>
                 <Table.Cell><button id='delete-button' className="button" onClick={()=>handleDelete(list.id)}>Delete</button></Table.Cell>
 
               </Table.Row>

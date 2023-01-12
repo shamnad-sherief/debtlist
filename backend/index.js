@@ -39,6 +39,21 @@ app.delete("/lists/:id",(req,res) =>{
 })
 
 
+app.put("/lists/:id",(req,res) =>{
+    const listId = req.params.id;
+    const q = "UPDATE `list` SET `name` = ?, `amount` = ? WHERE `list`.`id` = ?";
+    const values = [
+        req.body.name,
+        req.body.amount,
+    ]
+
+    db.query(q,[...values,listId], (err,data) => {
+        if(err) return res.json(err)
+        return res.json("list has been updated successfully")
+    })
+})
+
+
 app.post("/lists", (req,res)=> {
     const q = "INSERT INTO `list` ( `name`, `amount`) VALUES (?)"
     const values = [

@@ -10,12 +10,12 @@
 
 }
 
-.submit-button{
+/* .submit-button{
     background-color:#3ea02a;
     text-decoration: none;
 
 
-}
+} */
 
 #edit {
     color: #FFF;
@@ -32,9 +32,6 @@ th, td {
     padding: 7px;
   }
 
-.button {
-    text-decoration: none;
-  }
 
 .table-container {
     margin-bottom: 15px;
@@ -82,3 +79,50 @@ th, td {
     background-color: #45a049;
   }
   
+
+
+
+
+
+  .table-container {
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+  
+  .table-container th, .table-container td {
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  .table-container th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  .table-container tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table-container tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .button {
+    color: #fff;
+    /* padding: 0.5rem 1rem; */
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 1rem;
+  }
+  
+ 
+  
+  #submit {
+    background-color: green; 
+    color: white;
+    padding: 10px 10px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-size: 18px;
+}

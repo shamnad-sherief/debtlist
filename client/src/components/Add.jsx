@@ -1,14 +1,16 @@
 import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 
-export const Add = () => {
+export const Add = (props) => {
 
     const [list,setList] = useState({
         name:"",
         amount:"",
     });
+
+  const { userId  } = useParams();
 
   const navigate = useNavigate() 
 
@@ -20,8 +22,9 @@ export const Add = () => {
   const handleClick = async (e) =>{
     e.preventDefault()
     try{
+        list.userId = userId;
         await axios.post("http://localhost:8800/lists",list)
-        navigate("/")
+        navigate(`/debtlist/`, { state: { userId } });
     } catch(err){
         console.log(err)
     }

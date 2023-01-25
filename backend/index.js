@@ -36,6 +36,7 @@ app.post("/login", (req, res) => {
     });
 });
 
+
   
 
 
@@ -142,6 +143,19 @@ app.post("/lists", (req,res)=> {
     })
 })
 
-app.listen(8800, ()=>{
+
+app.get("/userId", (req,res)=> {
+    let listId = req.query.listId;
+    const q = `SELECT userid FROM list WHERE id = ?`;
+    db.query(q,listId,(err,data)=>{
+        if(err) return res.json(err)
+        if(!data.length) return res.json({message: "No data found"})
+        return res.json(data)
+    })
+});
+
+
+
+    app.listen(8800, ()=>{
     console.log("Connected to backend!!")
 })

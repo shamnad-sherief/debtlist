@@ -28,13 +28,15 @@ export const Update = () => {
     
     try{
         await axios.put("http://localhost:8800/lists/"+listId,list)
-        navigate("/")
+        const res = await axios.get("http://localhost:8800/userId/",{ params: { listId } } )
+        const userId = res.data[0].userid;
+        navigate(`/debtlist/`, { state: { userId } });
     } catch(err){
         console.log(err)
     }
   }
 
-  console.log(list)
+
   return (
     <div className="form">
         <h1>Update List</h1>
